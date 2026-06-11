@@ -1,100 +1,73 @@
-import { Code2 } from "lucide-react";
+import { Sparkles, Github, Linkedin, Twitter } from "lucide-react";
 
-import { SocialLinks, FooterLinks } from "../constant/main-constant.js";
+export function Footer() {
+  const footerLinks = {
+    Product: ["Features", "Pricing", "Updates"],
+    Resources: ["Blog", "Help Center", "Documentation"],
+    Company: ["About", "Careers", "Contact"],
+  };
 
-export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="border-t border-white/10 py-16 px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-sm">
-                <Code2 className="w-5 h-5 text-white" />
+          <div className="lg:col-span-2 space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6C63FF] to-[#8B5CF6] flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
-              <span className="text-gray-900 dark:text-white">PairCode</span>
+              <span className="text-xl font-semibold">Orbit</span>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 max-w-sm">
-              The modern platform for collaborative coding. Connect with
-              developers, learn together, and build better software.
+            <p className="text-white/60 max-w-sm">
+              Where communities come to life. Create spaces, meet people, and stay connected from anywhere.
             </p>
-            <div className="flex gap-4">
-              {SocialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all"
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                );
-              })}
+            <div className="flex items-center gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div>
-            <h4 className="text-gray-900 dark:text-white mb-4">Product</h4>
-            <ul className="space-y-3">
-              {FooterLinks.product.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-gray-900 dark:text-white mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {FooterLinks.resources.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-gray-900 dark:text-white mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {FooterLinks.legal.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title} className="space-y-4">
+              <h3 className="font-semibold">{title}</h3>
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              © 2025 PairCode. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Made with ❤️ for developers worldwide
-            </p>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-white/50">© 2026 Orbit. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-sm text-white/50 hover:text-white/70 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-sm text-white/50 hover:text-white/70 transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

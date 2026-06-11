@@ -1,12 +1,14 @@
+import { Communities } from "@/components/home/Communities";
+import { CTASection } from "@/components/home/CTASection";
+import { Features } from "@/components/home/Features";
+import { Footer } from "@/components/home/Footer";
+import { HeroSection } from "@/components/home/HeroSection";
+import { Navbar } from "@/components/home/Navbar";
+import { ProductShowcase } from "@/components/home/ProductShowcase";
+import { SocialProof } from "@/components/home/SocialProof";
+import { Testimonials } from "@/components/home/Testimonials";
+import { VideoCallShowcase } from "@/components/home/VideoCallShowcase";
 import { createFileRoute } from "@tanstack/react-router";
-import Demo from "@/components/home/Demo";
-import Features from "@/components/home/features";
-import Footer from "@/components/home/Footer";
-import Header from "@/components/home/Header";
-
-import Testimonial from "@/components/home/Testimonial";
-import Hero from "@/components/home/hero";
-import HowWorks from "@/components/home/howWorks";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -14,13 +16,16 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
-      <Header />
-      <Hero />
+    <div className="min-h-screen bg-[#0B0F19] text-white">
+      <Navbar />
+      <HeroSection />
+      <SocialProof />
       <Features />
-      <Testimonial />
-      <Demo />
-      <HowWorks />
+      <ProductShowcase />
+      <Communities />
+      <VideoCallShowcase />
+      <Testimonials />
+      <CTASection />
       <Footer />
     </div>
   );
