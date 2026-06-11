@@ -1,4 +1,7 @@
-# <div style="display:flex; align-items:center; gap:5px;"> Orbit <h1> </h1> <img src='./public/img/orbit.png' width="50px" height="50px"></div>
+<h1 align="center">
+  <img src='./public/img/orbit.png' width="45" height="45" alt="Orbit Logo" />
+  Orbit
+</h1>
 
 Orbit is a real-time messaging and video calling platform inspired by modern communication tools. It enables users to create servers, channels, and private conversations to collaborate and communicate seamlessly.
 
