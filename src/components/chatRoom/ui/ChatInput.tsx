@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import PermissionModel from "@/components/module/premissionModel";
+import { useAppSelector } from "@/store/hook";
 
 export default function ChatInput({ reciverId, chatId }) {
   const [content, setContnet] = useState("");
@@ -32,6 +33,10 @@ export default function ChatInput({ reciverId, chatId }) {
     EmojiText.splice(selectedPos, 0, emoji);
     setContnet(EmojiText.join(""));
   };
+
+  const message = useAppSelector(
+    (state) => state.messages.messagesByChat[chatId],
+  );
 
   const handleSendMsg = async (e) => {
     e.preventDefault();
