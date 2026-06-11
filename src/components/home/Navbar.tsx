@@ -1,4 +1,3 @@
-import { Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 export function Navbar() {
@@ -14,26 +13,44 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6C63FF] to-[#8B5CF6] flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
+            <img
+              src="../public/img/orbit.png"
+              alt="Orbit Logo"
+              className="w-6 h-6"
+            />
+
             <span className="text-xl font-semibold">Orbit</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#home" className="text-sm text-white/70 hover:text-white transition-colors">
+            <a
+              href="#home"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
               Home
             </a>
-            <a href="#features" className="text-sm text-white/70 hover:text-white transition-colors">
+            <a
+              href="#features"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
               Features
             </a>
-            <a href="#communities" className="text-sm text-white/70 hover:text-white transition-colors">
+            <a
+              href="#communities"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
               Communities
             </a>
-            <a href="#pricing" className="text-sm text-white/70 hover:text-white transition-colors">
+            <a
+              href="#pricing"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
               Pricing
             </a>
-            <a href="#blog" className="text-sm text-white/70 hover:text-white transition-colors">
+            <a
+              href="#blog"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
               Blog
             </a>
           </div>
